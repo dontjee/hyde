@@ -144,6 +144,7 @@ namespace TechSmith.Hyde.Table.Memory
       }
 
       public void Save()
+
       {
          if ( PendingSaveExceptionExists() )
          {
