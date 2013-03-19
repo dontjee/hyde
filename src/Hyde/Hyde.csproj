@@ -89,6 +89,16 @@
     <Compile Include="Table\Azure\ExecutableTableOperation.cs" />
     <Compile Include="ICloudStorageAccount.cs" />
     <Compile Include="Table\Azure\GenericTableEntity.cs" />
+    <Compile Include="Table\Fluent\BoundedPartitionQuery.cs" />
+    <Compile Include="Table\Fluent\BoundedRowKeyQuery.cs" />
+    <Compile Include="Table\Fluent\DeferredQuery.cs" />
+    <Compile Include="Table\Fluent\IBoundedPartitionQuery.cs" />
+    <Compile Include="Table\Fluent\IBoundedRowKeyQuery.cs" />
+    <Compile Include="Table\Fluent\IPartitionKeyQuery.cs" />
+    <Compile Include="Table\Fluent\IRowKeyQuery.cs" />
+    <Compile Include="Table\Fluent\PartitionKeyQuery.cs" />
+    <Compile Include="Table\Fluent\QueryDescriptor.cs" />
+    <Compile Include="Table\Fluent\RowKeyQuery.cs" />
     <Compile Include="Table\Query.cs" />
     <Compile Include="Table\TableItem.cs" />
     <Compile Include="Table\Execute.cs" />

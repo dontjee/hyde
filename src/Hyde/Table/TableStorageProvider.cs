@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TechSmith.Hyde.Table.Fluent;
 
 namespace TechSmith.Hyde.Table
 {
@@ -83,6 +84,15 @@ namespace TechSmith.Hyde.Table
       {
          return _context.GetItem( tableName, partitionKey, rowKey );
       }
+
+      public IPartitionKeyQuery<T> GetTable<T>( string tableName ) where T : new()
+      {
+         return new PartitionKeyQuery<T>( tableName, _context );
+      }
+
+      //public IPartitionKeyQuery<dynamic> GetTable( string tableName )
+      //{
+      //}
 
       public IQuery<T> GetCollection<T>( string tableName, string partitionKey ) where T : new()
       {
@@ -197,4 +207,5 @@ namespace TechSmith.Hyde.Table
          _context.Merge( tableName, TableItem.Create( instance, _reservedPropertyBehavior ) );
       }
    }
+
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TechSmith.Hyde.Table.Azure;
+using TechSmith.Hyde.Table.Fluent;
 
 namespace TechSmith.Hyde.Table
 {
@@ -31,5 +32,7 @@ namespace TechSmith.Hyde.Table
 
       [Obsolete( "Use GetRangeByPartitionKey instead." )]
       IEnumerable<T> GetRange<T>( string tableName, string partitionKeyLow, string partitionKeyHigh ) where T : new();
+
+      IEnumerable<T> PerformQuery<T>( string tableName, QueryDescriptor query );
    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TechSmith.Hyde.Common;
 using TechSmith.Hyde.Table.Azure;
+using TechSmith.Hyde.Table.Fluent;
 
 namespace TechSmith.Hyde.Table.Memory
 {
@@ -404,6 +405,10 @@ namespace TechSmith.Hyde.Table.Memory
       public IEnumerable<T> GetRange<T>( string tableName, string partitionKeyLow, string partitionKeyHigh ) where T : new()
       {
          return GetRangeByPartitionKey<T>( tableName, partitionKeyLow, partitionKeyHigh );
+      }
+
+      public IEnumerable<T> PerformQuery<T>( string tableName, QueryDescriptor query )
+      {
       }
    }
 }

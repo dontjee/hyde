@@ -6,6 +6,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using Microsoft.WindowsAzure.Storage.Table;
 using TechSmith.Hyde.Common;
+using TechSmith.Hyde.Table.Fluent;
 
 namespace TechSmith.Hyde.Table.Azure
 {
@@ -326,6 +327,10 @@ namespace TechSmith.Hyde.Table.Azure
       public IEnumerable<T> GetRange<T>( string tableName, string partitionKeyLow, string partitionKeyHigh ) where T : new()
       {
          return GetRangeByPartitionKey<T>( tableName, partitionKeyLow, partitionKeyHigh );
+      }
+
+      public IEnumerable<T> PerformQuery<T>( string tableName, QueryDescriptor query )
+      {
       }
 
       private GenericTableEntity Get( string tableName, string partitionKey, string rowKey )
